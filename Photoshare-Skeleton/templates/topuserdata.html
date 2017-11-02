@@ -1,0 +1,23 @@
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<title>Photoshare</title>
+{% if friends %}
+<h2>TOP 10 USERS' DATA</h2>
+    <ul>
+    {% for friend in friends %}
+        <li>{{friend[0]}} {{friend[1]}}</li>
+        <li>{{friend[2]}}</li>
+        <li>{{friend[3]}}</li>
+        <li>{{friend[4]}}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% if albums %}
+<h2>Theirm albums</h2>
+    <ul>
+    {% for album in albums %}
+        <li><a href = "/topuserphotolist?album_id={{album[1]}}">{{album[0]}}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}

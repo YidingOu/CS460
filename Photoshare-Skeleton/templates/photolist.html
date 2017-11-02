@@ -1,0 +1,17 @@
+<title>Photoshare</title>
+{% if name %}
+  <h1>Hello {{ name }}!</h1>
+{% endif %}
+{% if albums %}
+<h2>Here's your photos</h2>
+    <ul>
+    {% for photo in albums %}
+        <li><a href = "/mysinglephoto?photo_id={{photo[1]}}"><img src='data:image/png;base64, {{photo[0]}}'/></a>></li>
+    {% endfor %}
+    </ul>
+
+{% endif %}
+<ul>
+    <li><a href='/goupload'>Upload a photo</a> </li> 
+    <li><a href='/deletealbum'>Delete this album</a> </li> 
+    </ul>

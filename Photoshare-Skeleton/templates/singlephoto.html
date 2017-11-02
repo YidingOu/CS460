@@ -1,0 +1,57 @@
+<title>Photoshare</title>
+{% if name %}
+  <h1>Hello {{ name }}!</h1>
+{% endif %}
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+{% if photos %}
+<h2>Here's your photos</h2>
+    <ul>
+    {% for photo in photos %}
+        <li><img src='data:image/png;base64, {{photo[0]}}'/></li>
+        {% if tags %}
+            {% for tag in tags %}
+              <h4>#{{tag[0]}}</h4>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% endif %}
+ <ul><li><a href = "/like?uid={{uid}}">Like It !!</a></li>
+    {% if like %}
+ <li><h4>{{like}}people likes</h4></li>
+  {% endif %}
+  {% if names %}
+ {% for n in names %}
+<li><h4>{{n[0]}}{{n[1]}}</h4></li>
+{% endfor %}
+ {% endif %}
+ </ul>>
+<body>
+        <div class="title">
+            <h4>Upload a comment to Photoshare</h4>
+        </div>
+            <form method="post" enctype="multipart/form-data" action="/getcomment">
+                <label for="comment">Comment:</label>
+                <input type="text" name="comment" required='true' /><br />
+                <input type="submit" value="Upload" />
+            </form>
+    </body>
+  
+{% if comments %}
+<h2>Here's your comments</h2>
+    <ul>
+    {% for comment in comments %}
+        <h4> {{comment[0]}} </h4>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% if others %}
+<h2>Here's other's comments</h2>
+    <ul>
+    {% for other in others %}
+        <h4> {{other[0]}} </h4>
+    {% endfor %}
+    </ul>
+{% endif %}

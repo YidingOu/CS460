@@ -1,0 +1,20 @@
+<title>Photoshare</title>
+{% if name %}
+  <h1>Hello {{ name }}!</h1>
+{% endif %}
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+{% if photos %}
+<h2>Here's your photos</h2>
+    <ul>
+    {% for photo in photos %}
+        <li><img src='data:image/png;base64, {{photo[0]}}'/></li>
+        {% if tags %}
+            {% for tag in tags %}
+              <h4>#{{tag[0]}}</h4>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% endif %}

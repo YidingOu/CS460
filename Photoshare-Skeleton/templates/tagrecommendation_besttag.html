@@ -1,0 +1,11 @@
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<title>Photoshare</title>
+{% if tag %}
+<ul>
+    {% for t in tag %}
+        <li><a href = "/tagphotos2?tid={{t[0]}}">{{t[0]}}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}

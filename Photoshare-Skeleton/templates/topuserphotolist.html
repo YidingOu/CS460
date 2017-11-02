@@ -1,0 +1,10 @@
+<title>Photoshare</title>
+{% if albums %}
+<h2>Here's Top Users' photos</h2>
+    <ul>
+    {% for photo in albums %}
+        <li><a href = "/topusersinglephoto?photo_id={{photo[1]}}"><img src='data:image/png;base64, {{photo[0]}}'/></a>></li>
+    {% endfor %}
+    </ul>
+
+{% endif %}

@@ -1,0 +1,38 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+<!doctype html>
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<title>Photoshare</title>
+{% if name %}
+  <h1>Hello {{ name }}!</h1>
+{% endif %}
+
+{% if albums %}
+<h2>Here's your album</h2>
+    <ul>
+    {% for album in albums %}
+        <li><a href = "/photolist?album_id={{album[1]}}">{{album[0]}}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% if message is none %}
+  <p>You should <a href='/login'>login!</a></p>
+{% else %}
+  <p> Go to <a href='/profile'>profile?</a></p>
+{% endif %}
+
+<ul>
+<li><a href='/logout'>Logout</a></li>
+<li><a href='/'>Home</a></li>
+<li><a href='/showalbums'>Album</a></li>
+<li><a href='/friendlist'>Friend List</a></li>
+<li><a href='/createalbum'>Create a album</a></li>
+<li><a href='/findfriend'>Search your friend</a></li>
+<li><a href='/getrank'>Top 10 Users</a></li>
+<li><a href='/gettagrank'>Top 10 Tags</a></li>
+<li><a href='/tagsearch'>Tag Search</a></li>
+<li><a href='/tagrecommendation'>Tag Recommendation</a></li>
+<li><a href='/youmayalsolike'>You may also like</a></li>
+</ul>
+

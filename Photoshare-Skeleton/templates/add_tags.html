@@ -1,0 +1,12 @@
+{% if name %}
+  <h1>Hello {{ name }}!</h1>
+{% endif %}
+<body>
+
+<form method="get" enctype="multipart/form-data" action="/createalbum">
+				<img src="C:\Users\LukeO\Photoshare-Skeleton\templates\img\Screenshot (4).png" alt="Mountain View" style="width:304px;height:228px;">
+                <label for="tags_text">tags here:</label>
+                <input type="text" name="tags_text" required='true' /><br />
+                <input type="submit" value="Upload" />
+            </form>
+</body>

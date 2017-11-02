@@ -1,0 +1,11 @@
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<title>Photoshare</title>
+{% if users %}
+    <ul>
+    {% for user in users %}
+        <li><a href = "/gotop10?user_id={{user[0][2]}}">{{user[0][0]}},{{user[0][1]}}:{{user[1]}}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}

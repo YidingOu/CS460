@@ -1,0 +1,15 @@
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<title>Photoshare</title>
+{% if name %}
+  <h1>Great!! {{ name }}!</h1>
+{% endif %}
+{% if friends %}
+<h2>Here's the result</h2>
+    <ul>
+    {% for friend in friends %}
+        <li>{{friend[0]}} {{friend[1]}}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}

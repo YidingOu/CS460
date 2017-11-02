@@ -1,0 +1,16 @@
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<title>Add a friend!!!</title>
+{% if name %}
+  <h1>Hello {{ name }}!</h1>
+{% endif %}
+
+{% if friends %}
+<h2>Here's the result</h2>
+    <ul>
+    {% for friend in friends %}
+        <li><a href='/goaddfriend?friend_id={{friend[2]}}'>{{friend[0]}} {{friend[1]}}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}

@@ -1,0 +1,11 @@
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<title>Photoshare</title>
+{% if likes %}
+    <ul>
+    {% for like in likes %}
+        <li><a href = "/topusersinglephoto?photo_id={{like[1]}}"><img src='data:image/png;base64, {{like[0]}}'/></a></li>
+    {% endfor %}
+    </ul>
+{% endif %}

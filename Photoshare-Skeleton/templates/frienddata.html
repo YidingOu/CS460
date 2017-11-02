@@ -1,0 +1,26 @@
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<title>Photoshare</title>
+{% if name %}
+  <h1>Great!! {{ name }}!</h1>
+{% endif %}
+{% if friends %}
+<h2>Here's your friend</h2>
+    <ul>
+    {% for friend in friends %}
+        <li>{{friend[0]}} {{friend[1]}}</li>
+        <li>{{friend[2]}}</li>
+        <li>{{friend[3]}}</li>
+        <li>{{friend[4]}}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% if albums %}
+<h2>Here's your friend's albums</h2>
+    <ul>
+    {% for album in albums %}
+        <li><a href = "/friendphotolist?album_id={{album[1]}}">{{album[0]}}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}
